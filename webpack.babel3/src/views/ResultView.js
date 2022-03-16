@@ -1,4 +1,5 @@
 import View from "./View.js";
+import defaultImage from "../images/default-image.jpg"
 
 export default class ResultView extends View {
   constructor(el) {
