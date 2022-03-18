@@ -27,5 +27,9 @@ module.exports ={ //es6가아닌 node가 사용할 모듈시스템
             }
           }
         ]
-    }
+  },
+  plugins:[
+    
+  ]
+    
 }
