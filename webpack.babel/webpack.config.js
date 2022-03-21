@@ -34,6 +34,11 @@ module.exports = {//es6가아닌 node가 사용할 모듈시스템
           limit: 10000, //파일용량 10kb // 10kb미만은 url-loader로 처리->자바스크립트 문자열로 처리 , 이상이면 file-loader가 처리->파일복사
         },
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader" // 바벨이 통합할수 있도록 해주는 로더
+      }
     ],
   },
   plugins: [
