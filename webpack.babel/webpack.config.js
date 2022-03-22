@@ -17,7 +17,7 @@ module.exports = {//es6가아닌 node가 사용할 모듈시스템
   module: {//로더 js뿐만아닌 다른파일도 모듈로처리해서 번들해줌
     rules: [
       {
-        test: /\.css$/, //로더가 처리해야될 파일들의 패턴(정규표현식)
+        test: /\.(scss|css)$/, //로더가 처리해야될 파일들의 패턴(정규표현식)
         use: [
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
@@ -37,7 +37,7 @@ module.exports = {//es6가아닌 node가 사용할 모듈시스템
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader" // 바벨이 통합할수 있도록 해주는 로더
+        loader: "babel-loader" // 바벨이 통합할수 있도록 해주는 로더 // use:["babel-loader"] 이런식도 가능
       }
     ],
   },

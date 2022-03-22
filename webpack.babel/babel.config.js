@@ -15,3 +15,8 @@ module.exports = {
       ]
     ]
   };
+
+  //npm i @babel/preset-env @babel/cli
+  //바벨을 웹팩으로 통합하는 방법 : npm i babel-loader -D
+  //웹팩 설정에 로더를 추가
+  //async await ->npm i regenerator-runtime
