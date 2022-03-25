@@ -23,6 +23,7 @@ module.exports = {//es6가아닌 node가 사용할 모듈시스템
             ? MiniCssExtractPlugin.loader
             :"style-loader", //style-loader:자바스크립트파일에서 css파일을 불러올수 있음(html파일에서 css직접불러오기 안해도됨)
           "css-loader", //css파일을 만나면 css-loader가 처리함
+          "sass-loader" //sass,scss파일 처리
         ],
       },
       {
