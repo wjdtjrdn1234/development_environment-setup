@@ -16,13 +16,27 @@ module.exports = {
     filename: "[name].js", //결과 파일이름
     path: path.resolve("./dist") //절대경로계산해주는 resolve
   },
-  devServer: {  //webpack dev server 세팅 -> 실행명령어는 npm start(package.json에서 설정)
+
+  // eslint-disable-next-line prettier/prettier
+  devServer: {
+    //webpack dev server 세팅 -> 실행명령어는 npm start(package.json에서 설정)
     overlay: true, //웹팩으로 빌드시  에러,경고문구를 브라우저에 표시
     stats: "errors-only", //메시지수준(5가지중 하나인 erros-only)
     // before: (app, server, compiler) => {
     //   app.use(apiMocker('/api', 'mocks/api'));
     // },
-    proxy: { //api 서버 프록싱 설정을 추가하세요
+
+    before: app => {
+      //before함수는 server객체를 받는다. 즉 웹팩개발서버를 받음,
+      app.get("/api/users", (_req, res) => {
+        res.json([
+          { id: 1, name: "Alice" },
+          { id: 2, name: "Zimmy" }
+        ]);
+      });
+    },
+    proxy: {
+      //api 서버 프록싱 설정을 추가하세요
       "/api": "http://localhost:8081"
     },
     hot: true
