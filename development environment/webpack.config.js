@@ -28,7 +28,7 @@ module.exports = {
 
     before: app => {
       //before함수는 server객체를 받는다. 즉 웹팩개발서버를 받음,
-      app.get("/api/users", (_req, res) => {
+      app.get("/bapi/users", (_req, res) => {
         res.json([
           { id: 1, name: "Alice" },
           { id: 2, name: "Zimmy" }
